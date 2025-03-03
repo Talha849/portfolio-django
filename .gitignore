@@ -1,0 +1,9 @@
+# Django
+*.sqlite3
+__pycache__/
+*.pyc
+.env
+venv/
+.env/
+media/
+plan.txt
