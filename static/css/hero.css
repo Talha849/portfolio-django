@@ -1,0 +1,11 @@
+/* static/css/hero.css */
+.hero {
+    min-height: 80vh; /* Full-screen height */
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Gradient background (optional) */
+  .hero {
+    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+  }

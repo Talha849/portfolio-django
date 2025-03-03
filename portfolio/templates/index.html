@@ -4,24 +4,28 @@
 {% block content %}
 
 <!--Hero Section-->
-<section class="hero">
-    <h1>Asslam-u-alkium! My Name is Talha Fiaz</h1>
-    <p>A Django Developer passionate about building cool stuff</p>
-</section>
-<!--Projects Grid-->
-<div class="row">
-    {% for project in projects %}
-    <div class="col-md-4">
-        <div class="card">
-            <img src="{{project.image.url}}" alt="" class="card-img-top">
-        </div>
-        <div class="card-body">
-            <h5>{{project.title}}</h5>
-            <p>{{project.description}}</p>
-            <a href="{{project.demo_url}}" class="btn btn-primary">Demo</a>
+<section class="hero py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <!--Text Content-->
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold" >Hi! Im TalhaFiaz</h1>
+                <p class="lead">A passionate Django Developer building awesome web apps.</p>
+                {% include 'projects.html' with projects=projects %}
+                {% comment %} <a href="{% url 'projects' %}" class="btn btn-primary btn-lg">View My Work</a> {% endcomment %}
+                <!--Social Links-->
+                <div class="mt-3">
+                    <a href="https://github.com/Talha849/portfolio-django" class="text-dark me-3"><i class="fab fa-github fa-2x"></i></a>
+                    <a href="https://github.com/Talha849/portfolio-django" class="text-dark me-3"><i class="fab fa-linkedin fa-2x"></i></a>
+                </div>            
+            </div>
+            <!--Portfolio Image-->
+            <div class="col-lg-6 text-center mt-4 mt-lg-0">
+                <img src="{% static 'images/hero.jpg' %}" style="width: 70%;" alt="TalhaFiaz" class="img-fluid rounded-circle shadow" style="max-width: 300%">
+            </div>
         </div>
     </div>
-    {% endfor %}
-</div>
+</section>
+{% include 'about.html' with skills=skills %}
 
 {% endblock  %}

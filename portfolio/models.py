@@ -11,3 +11,18 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+class Skill(models.Model):
+    name = models.CharField(max_length=50)
+    icon = models.CharField(
+        max_length=50,
+        default='fas fa-code',  # Default icon
+        help_text="Font Awesome icon class name (e.g., 'fab fa-python')"
+        )
+    proficiency = models.PositiveIntegerField(
+        default=75,
+        help_text="Proficiency level in percentage (0-100)"
+        )
+    
+    def __str__(self):
+        return self.name

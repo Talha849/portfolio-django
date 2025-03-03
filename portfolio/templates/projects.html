@@ -1,0 +1,22 @@
+
+ <!--Projects Grid-->
+<div class="container mt-4" >
+<div class="row align-items-center">
+    {% for project in projects %}
+    <div class="col-md-4">
+        <div class="card">
+            <img src="{{project.image.url}}" class="img-fluid rounded shadow" alt="" class="card-img-top">
+        </div>
+        <div class="card-body">
+            <div class="container mt-4" >
+                <div class="row align-items-center">
+                  <h5>{{project.title}}</h5>
+                  <p>{{project.description}}</p>
+                  <a href="{{project.demo_url}}" class=" mb-4 btn btn-primary">Demo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
